@@ -1,5 +1,5 @@
 ﻿using School.Core.Abstractions.Repositories;
-using School.Core.Dtos.Requests.StudentRequest;
+using School.Core.Dtos.Responses.StudentReponse;
 
 namespace School.Infrastructure.Implementations.Repositories
 {
@@ -9,7 +9,7 @@ namespace School.Infrastructure.Implementations.Repositories
         {
 
         }
-        public async Task<List<GetStudentRequest>> GetStudentListAsync()
+        public async Task<List<GetStudentResponse>> GetStudentListAsync()
         {
             throw new NotImplementedException();
         }

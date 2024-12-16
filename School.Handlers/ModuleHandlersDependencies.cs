@@ -9,6 +9,7 @@ namespace School.Handlers
         {
 
             services.AddMediatR(cf => cf.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
         }
 
