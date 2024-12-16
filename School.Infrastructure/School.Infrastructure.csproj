@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\School.Core\School.Core.csproj" />
     <ProjectReference Include="..\School.Data\School.Data.csproj" />
   </ItemGroup>
 

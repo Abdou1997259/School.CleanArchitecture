@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using School.Infrastructure.Data;
+using School.Core;
+using School.Handlers;
+using School.Infrastructure;
+using School.Infrastructure.Context;
+using School.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCoreDependencies();
+builder.Services.AddServiceDependencies();
+builder.Services.AddInfrastructureDependencies();
+builder.Services.AddHandlersDependencies();
 builder.Services.AddDbContext<ApplicationDBContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));

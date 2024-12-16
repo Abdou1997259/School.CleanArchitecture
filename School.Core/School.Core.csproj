@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\School.Data\School.Data.csproj" />
-    <ProjectReference Include="..\School.Service\School.Service.csproj" />
+    <Folder Include="Dtos\Responses\StudentReponse\" />
+    <Folder Include="CQRS\Student\Commands\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
   </ItemGroup>
 
 </Project>

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Service", "School.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Infrastructure", "School.Infrastructure\School.Infrastructure.csproj", "{C5F6E98C-E115-4969-AE0B-6C5616B488AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Handlers", "School.Handlers\School.Handlers.csproj", "{EFA17CD0-8EB0-4020-8DF6-AD2FE45BFD9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C5F6E98C-E115-4969-AE0B-6C5616B488AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5F6E98C-E115-4969-AE0B-6C5616B488AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5F6E98C-E115-4969-AE0B-6C5616B488AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA17CD0-8EB0-4020-8DF6-AD2FE45BFD9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA17CD0-8EB0-4020-8DF6-AD2FE45BFD9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA17CD0-8EB0-4020-8DF6-AD2FE45BFD9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA17CD0-8EB0-4020-8DF6-AD2FE45BFD9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
