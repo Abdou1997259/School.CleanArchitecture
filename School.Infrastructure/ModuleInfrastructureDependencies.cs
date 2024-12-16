@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using School.Core.Abstractions.Repositories;
-using School.Infrastructure.Implementations.Repositories;
+using School.Infrastructure.Implementations.Repositories.StudentRepositories;
 
 namespace School.Infrastructure
 {

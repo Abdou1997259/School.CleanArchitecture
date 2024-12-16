@@ -1,9 +1,10 @@
-﻿using School.Core.Dtos.Responses.StudentReponse;
+﻿using School.Core.Bases;
+using School.Data.Entities;
 
 namespace School.Core.Abstractions.Repositories
 {
-    public interface IStudentRepository
+    public interface IStudentRepository : IGenericRepository<Student>
     {
-        Task<List<GetStudentResponse>> GetStudentListAsync();
+
     }
 }

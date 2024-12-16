@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using School.Data.Bases;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace School.Data.Entities
 {
-    public class StudentSubject
+    public class StudentSubject : BaseEntity
     {
         [Key]
         public int StudSubID { get; set; }
