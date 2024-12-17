@@ -13,7 +13,7 @@ namespace School.Infrastructure.Implementations.Specifications.StudentSpecificat
             {
                 Name = x.GetName(),
                 Address = x.Address,
-                DepartmentName = x.Department.GetName(),
+                DepartmentName = x.Department == null ? null : x.Department.GetName(),
                 Phone = x.Phone,
             });
 
