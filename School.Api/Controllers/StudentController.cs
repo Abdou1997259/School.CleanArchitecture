@@ -10,7 +10,7 @@ namespace School.Api.Controllers
     [ApiController]
     public class StudentController : AppControllerBase
     {
-        [HttpPut(Router.StudentRouting.Create)]
+        [HttpPost(Router.StudentRouting.Create)]
         public async Task<IActionResult> CreateAsync([FromBody] AddStudentCommand Student)
         {
             var result = await Sender.Send(Student);

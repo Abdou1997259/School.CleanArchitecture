@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using School.Core;
 using School.Handlers;
+using School.Handlers.Extension;
 using School.Infrastructure;
 using School.Infrastructure.Context;
 using School.Service;
@@ -17,6 +18,7 @@ builder.Services.AddCoreDependencies();
 builder.Services.AddServiceDependencies();
 builder.Services.AddInfrastructureDependencies();
 builder.Services.AddHandlersDependencies();
+
 builder.Services.AddDbContext<ApplicationDBContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -32,7 +34,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.AddMiddleWares();
 app.UseAuthorization();
 
 app.MapControllers();

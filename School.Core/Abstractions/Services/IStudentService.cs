@@ -9,5 +9,7 @@ namespace School.Core.Abstractions.Services
         Task<Student> UpdateStudent(Student student);
         Task<Student> DeleteStudent(Student student);
         Task<GetStudentResponse> GetStudentByIdAsync(int id);
+        Task<bool> IsNameExistAsync(string name);
+
     }
 }

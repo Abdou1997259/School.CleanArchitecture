@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Text.Json;
 
 namespace School.Core.Bases
 {
@@ -33,5 +34,9 @@ namespace School.Core.Bases
         public string Message { get; set; }
         public List<string> Errors { get; set; }
         public T Date { get; set; }
+        public override string ToString()
+        {
+            return JsonSerializer.Serialize(this);
+        }
     }
 }

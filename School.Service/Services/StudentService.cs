@@ -47,8 +47,12 @@ namespace School.Service.Services
             return res.First(); // Assuming only one result is expected
         }
 
-
-
+        public async Task<bool> IsNameExistAsync(string name)
+        {
+            var spec = new GetStudentByNameSpecification(name);
+            var result = await _unitOfWork.StudentRepository.ApplySpecification(spec).FirstOrDefaultAsync();
+            return result != null;
+        }
 
         public async Task<Student> UpdateStudent(Student student)
         {
