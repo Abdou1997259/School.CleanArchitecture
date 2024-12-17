@@ -67,7 +67,7 @@ namespace School.Core.Bases
 
             return new Response<T>
             {
-                StatusCode = System.Net.HttpStatusCode.NotFound,
+                StatusCode = System.Net.HttpStatusCode.Created,
                 Succeeded = true,
                 Message = "Created Successfully",
                 Date = entity,

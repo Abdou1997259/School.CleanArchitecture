@@ -7,6 +7,7 @@ namespace School.Handlers.Mapping.StudentProfiles
         public StudentProfile()
         {
             GetStudentListMapping();
+            AddStudentMapping();
 
         }
     }

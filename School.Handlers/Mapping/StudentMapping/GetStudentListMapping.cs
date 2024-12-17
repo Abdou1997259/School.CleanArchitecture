@@ -8,7 +8,7 @@ namespace School.Handlers.Mapping.StudentProfiles
         public void GetStudentListMapping()
         {
             CreateMap<Student, GetStudentResponse>()
-                .ForMember(x => x.DepartmentName, p => p.MapFrom(x => x.Department.DName));
+                .ForMember(x => x.DepartmentName, p => p.MapFrom(x => x.Department.GetName()));
         }
     }
 }
