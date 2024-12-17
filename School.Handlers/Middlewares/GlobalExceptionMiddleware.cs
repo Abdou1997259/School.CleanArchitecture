@@ -26,7 +26,7 @@ namespace School.Handlers.Middlewares
                 {
                     case FluentValidation.ValidationException e:
                         response.StatusCode = (int)HttpStatusCode.UnprocessableContent;
-                        responseModel.Errors = (List<string>)e.Errors;
+                        responseModel.Errors = e.Errors.Select(error => error.ErrorMessage).ToList();
                         break;
                     default:
                         response.StatusCode = (int)HttpStatusCode.InternalServerError;

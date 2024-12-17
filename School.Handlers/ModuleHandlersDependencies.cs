@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using School.Core.CQRS.Students.Commands;
 using School.Handlers.Behaviors;
 using System.Reflection;
 
@@ -10,10 +9,10 @@ public static class ModuleHandlersDependencies
     public static IServiceCollection AddHandlersDependencies(this IServiceCollection services)
     {
         // Register MediatR services
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(AddStudentCommand).Assembly));
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
         // Register FluentValidation services
-        services.AddValidatorsFromAssemblyContaining(typeof(AddStudentCommand));
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
         // Register AutoMapper services
         services.AddAutoMapper(Assembly.GetExecutingAssembly());

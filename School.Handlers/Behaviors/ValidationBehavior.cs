@@ -24,7 +24,7 @@ namespace School.Handlers.Behaviors
                 if (failures.Count > 0)
                 {
                     var messages = failures.Select(x => x.PropertyName + ": " + x.ErrorMessage).FirstOrDefault();
-                    throw new ValidationException(messages);
+                    throw new ValidationException(failures);
                 }
             }
 

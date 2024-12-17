@@ -11,6 +11,7 @@ namespace School.Handlers.Validations.Students
         public AddStudentValidation(IStudentService studentService)
         {
             _studentService = studentService;
+            ApplyValidationRules();
 
         }
         public void ApplyValidationRules()
@@ -30,7 +31,7 @@ namespace School.Handlers.Validations.Students
             var phoneNumberUtil = PhoneNumberUtil.GetInstance();
             try
             {
-                var parsedNumber = phoneNumberUtil.Parse(phoneNumber, null);
+                var parsedNumber = phoneNumberUtil.Parse(phoneNumber, "EG");
                 return phoneNumberUtil.IsValidNumber(parsedNumber);
             }
             catch (NumberParseException)
