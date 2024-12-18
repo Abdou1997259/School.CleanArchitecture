@@ -1,6 +1,7 @@
 ﻿using School.Core.Abstractions.Repositories;
 using School.Core.Bases;
 using School.Infrastructure.Context;
+using School.Infrastructure.Implementations.Repositories;
 using School.Infrastructure.Implementations.Repositories.StudentRepositories;
 
 namespace School.Infrastructure.Bases
@@ -34,6 +35,11 @@ namespace School.Infrastructure.Bases
         public void Dispose()
         {
             _db.Dispose();
+        }
+
+        public IDatabaseTransaction BeginTransaction()
+        {
+            return new DatabaseTransaction(_db);
         }
     }
 }
