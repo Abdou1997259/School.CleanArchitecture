@@ -1,11 +1,15 @@
-﻿using System.Net;
+﻿using Microsoft.Extensions.Localization;
+using School.Core.SharedResources;
+using System.Net;
 
 namespace School.Core.Bases
 {
     public class ResponseHandler
     {
-        public ResponseHandler()
+        private readonly IStringLocalizer<SharedResource> _stringLocalizer;
+        public ResponseHandler(IStringLocalizer<SharedResource> stringLocalizer)
         {
+            _stringLocalizer = stringLocalizer;
 
         }
         public Response<T> Deleted<T>()
@@ -75,6 +79,7 @@ namespace School.Core.Bases
 
             };
         }
+
 
     }
 }
