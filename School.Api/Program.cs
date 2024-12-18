@@ -19,6 +19,7 @@ builder.Services.AddCoreDependencies();
 builder.Services.AddServiceDependencies();
 builder.Services.AddInfrastructureDependencies();
 builder.Services.AddHandlersDependencies();
+builder.Services.AddLocalization();
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
     List<CultureInfo> cultures = new List<CultureInfo>

@@ -18,10 +18,12 @@ namespace School.Handlers.Handlers
         IRequestHandler<GetPaginationStudentSpecification, Response<PaginationResult<StudentPaginationResponse>>>
     {
         #region contsructor
-        private readonly IStringLocalizer<SharedResources> _stringLocalizer;
+        private readonly IStringLocalizer<SharedResource> _stringLocalizer;
         private readonly IStudentService _studentService;
         private readonly IMapper _mapper;
-        public StudentHandler(IStudentService studentService, IMapper mapper, IStringLocalizer<SharedResources> stringLocalizer)
+        public StudentHandler(IStudentService studentService,
+            IMapper mapper,
+            IStringLocalizer<SharedResource> stringLocalizer) : base(stringLocalizer)
         {
             _studentService = studentService;
             _mapper = mapper;

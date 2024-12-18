@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Localization;
 using School.Core.SharedResources;
+using School.Data.Constants.AppMetaData;
 using System.Net;
 
 namespace School.Core.Bases
@@ -18,7 +19,7 @@ namespace School.Core.Bases
             {
                 StatusCode = System.Net.HttpStatusCode.OK,
                 Succeeded = true,
-                Message = "Deleted Successfully"
+                Message = _stringLocalizer[Localization.Deleted]
 
             };
         }
@@ -29,7 +30,7 @@ namespace School.Core.Bases
                 Date = entity,
                 StatusCode = HttpStatusCode.OK,
                 Succeeded = true,
-                Message = "",
+                Message = Localization.Success,
                 Meta = meta
 
             };
@@ -41,7 +42,7 @@ namespace School.Core.Bases
             {
                 StatusCode = System.Net.HttpStatusCode.Unauthorized,
                 Succeeded = false,
-                Message = "UnUnauthorized"
+                Message = Localization.UnUnauthorized
             };
         }
         public Response<T> BadRequest<T>(string message)
@@ -51,7 +52,7 @@ namespace School.Core.Bases
             {
                 StatusCode = System.Net.HttpStatusCode.BadRequest,
                 Succeeded = false,
-                Message = message == null ? "Bad Request" : message
+                Message = message == null ? _stringLocalizer[Localization.BadRequest] : message
 
             };
         }
@@ -62,7 +63,7 @@ namespace School.Core.Bases
             {
                 StatusCode = System.Net.HttpStatusCode.NotFound,
                 Succeeded = false,
-                Message = message == null ? "Not Found" : message
+                Message = message == null ? _stringLocalizer[Localization.NotFound] : message
 
             };
         }
@@ -73,7 +74,7 @@ namespace School.Core.Bases
             {
                 StatusCode = System.Net.HttpStatusCode.Created,
                 Succeeded = true,
-                Message = "Created Successfully",
+                Message = _stringLocalizer[Localization.Created],
                 Date = entity,
                 Meta = meta
 
