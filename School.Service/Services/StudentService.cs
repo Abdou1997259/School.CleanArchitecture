@@ -1,8 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using School.Core.Abstractions.Services;
 using School.Core.Bases;
+using School.Core.Dtos.Requests.StudentRequest;
 using School.Core.Dtos.Responses.StudentReponse;
+using School.Core.Dtos.Responses.StudentResponse;
 using School.Data.Entities;
+using School.Infrastructure.Extensions;
 using School.Infrastructure.Implementations.Specifications.StudentSpecifications;
 
 namespace School.Service.Services
@@ -28,6 +31,22 @@ namespace School.Service.Services
         {
             var result = _unitOfWork.StudentRepository.Delete(student);
             await _unitOfWork.CompleteAsync();
+            return result;
+        }
+
+        public async Task<PaginationResult<StudentPaginationResponse>> GetAllPaginatedStudents(StudentPaginationRequest model)
+        {
+            var spec = new GetPaginationStudentSpecification(new StudentPaginationRequest
+            {
+                IsDeleted = model.IsDeleted,
+                OrderBy = model.OrderBy,
+                TypeOfOrdering = model.TypeOfOrdering,
+                PageNumber = model.PageNumber,
+                PageSize = model.PageSize,
+                Search = model.Search,
+
+            });
+            var result = await _unitOfWork.StudentRepository.ApplySpecification(spec).ToPaginationListAsync(model.PageNumber, model.PageSize);
             return result;
         }
 

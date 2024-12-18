@@ -2,7 +2,7 @@
 using School.Api.Bases;
 using School.Core.CQRS.Students.Commands;
 using School.Core.CQRS.Students.Queries;
-using School.Data.AppMetaData;
+using School.Data.Constants.AppMetaData;
 
 namespace School.Api.Controllers
 {
@@ -20,6 +20,12 @@ namespace School.Api.Controllers
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var result = await Sender.Send(new GetStudentQueryBydId(id));
+            return NewResult(result);
+        }
+        [HttpGet(Router.StudentRouting.GetPaginationStudent)]
+        public async Task<IActionResult> GetPaginationStudent([FromQuery] GetPaginationStudentSpecification model)
+        {
+            var result = await Sender.Send(model);
             return NewResult(result);
         }
     }

@@ -12,7 +12,7 @@ namespace School.Core.Dtos.Requests
         [DefaultValue(false)]
         public bool IsDeleted { get; set; }
         public string? Search { get; set; }
-        public string[]? OrderBy { get; set; }
+
 
     }
 }

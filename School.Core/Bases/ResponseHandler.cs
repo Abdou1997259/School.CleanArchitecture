@@ -25,7 +25,7 @@ namespace School.Core.Bases
                 Date = entity,
                 StatusCode = HttpStatusCode.OK,
                 Succeeded = true,
-                Message = "Added Successfully",
+                Message = "",
                 Meta = meta
 
             };

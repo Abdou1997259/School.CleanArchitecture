@@ -1,4 +1,4 @@
-﻿namespace School.Data.AppMetaData
+﻿namespace School.Data.Constants.AppMetaData
 {
     public static class Router
     {
@@ -11,6 +11,7 @@
             public const string Prefix = Rule + "student";
             public const string Create = Prefix + "/create";
             public const string GetById = Prefix + SingleRoute;
+            public const string GetPaginationStudent = Prefix + "/paginated-students";
         }
     }
 }

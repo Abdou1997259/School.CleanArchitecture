@@ -5,13 +5,15 @@ using School.Core.Bases;
 using School.Core.CQRS.Students.Commands;
 using School.Core.CQRS.Students.Queries;
 using School.Core.Dtos.Responses.StudentReponse;
+using School.Core.Dtos.Responses.StudentResponse;
 using School.Data.Entities;
 
 namespace School.Handlers.Handlers
 {
     public class StudentHandler : ResponseHandler,
         IRequestHandler<GetStudentQueryBydId, Response<GetStudentResponse>>,
-        IRequestHandler<AddStudentCommand, Response<Student>>
+        IRequestHandler<AddStudentCommand, Response<Student>>,
+        IRequestHandler<GetPaginationStudentSpecification, Response<PaginationResult<StudentPaginationResponse>>>
     {
         #region contsructor
         private readonly IStudentService _studentService;
@@ -32,6 +34,16 @@ namespace School.Handlers.Handlers
         {
             var mappedObj = _mapper.Map<Student>(request);
             return Created(await _studentService.AddStudent(mappedObj));
+        }
+
+        public async Task<Response<PaginationResult<StudentPaginationResponse>>> Handle(GetPaginationStudentSpecification request, CancellationToken cancellationToken)
+        {
+            var result = await _studentService.GetAllPaginatedStudents(request);
+
+
+
+
+            return Success(result);
         }
     }
 }
