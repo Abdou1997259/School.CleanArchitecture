@@ -27,7 +27,7 @@ namespace School.Handlers.Behaviors
 
                 if (failures.Count > 0)
                 {
-                    var messages = failures.Select(x => _stringLocalizer[$"{x.PropertyName}"] + "  " + _stringLocalizer[x.ErrorMessage]).FirstOrDefault();
+                    var messages = failures.Select(x => _stringLocalizer[x.PropertyName] + "  " + _stringLocalizer[x.ErrorMessage]).FirstOrDefault();
                     throw new ValidationException(failures);
                 }
             }
