@@ -7,7 +7,7 @@ using School.Core.CQRS.Students.Commands;
 using School.Core.CQRS.Students.Queries;
 using School.Core.Dtos.Responses.StudentReponse;
 using School.Core.Dtos.Responses.StudentResponse;
-using School.Core.SharedResources;
+using School.Core.Resources;
 using School.Data.Constants.AppMetaData;
 using School.Data.Entities;
 namespace School.Handlers.Handlers

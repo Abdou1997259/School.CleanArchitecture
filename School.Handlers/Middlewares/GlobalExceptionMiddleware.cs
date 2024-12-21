@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using School.Core.Bases;
 using System.Net;
 
@@ -24,9 +25,9 @@ namespace School.Handlers.Middlewares
                 var responseModel = new Response<string> { Succeeded = false, Message = "" };
                 switch (ex)
                 {
-                    case FluentValidation.ValidationException e:
+                    case ValidationException e:
                         response.StatusCode = (int)HttpStatusCode.UnprocessableContent;
-                        responseModel.Errors = e.Errors.Select(error => error.ErrorMessage).ToList();
+                        responseModel.Message = e.Message;
                         break;
                     default:
                         response.StatusCode = (int)HttpStatusCode.InternalServerError;

@@ -23,8 +23,8 @@
         {
             public const string NotEmpty = "NotEmpty";
             public const string NotNull = "NotNull";
-            public const string NameExists = "NameExists";
-            public const string InValid = "Invalid";
+            public const string Exists = "Exists";
+            public const string InValid = "InValid";
         }
 
 

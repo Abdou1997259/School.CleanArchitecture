@@ -118,45 +118,48 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BadRequest" xml:space="preserve">
-    <value>غير صالح</value>
+    <value>Bad Request</value>
   </data>
   <data name="Created" xml:space="preserve">
-    <value>تم الاضافة بنجاح</value>
+    <value>Created  Successfully</value>
   </data>
   <data name="Deleted" xml:space="preserve">
-    <value>تم السمح بنجاح</value>
+    <value>Deleted Successfully</value>
   </data>
   <data name="EmptyData" xml:space="preserve">
-    <value>لا يوجد بيانات</value>
+    <value>There is no data.</value>
+  </data>
+  <data name="Exists" xml:space="preserve">
+    <value>Exists before</value>
   </data>
   <data name="InValid" xml:space="preserve">
-    <value> ليس صحيحا</value>
+    <value> is InValid</value>
   </data>
   <data name="NameAr" xml:space="preserve">
-    <value>الاسم بالعربي</value>
+    <value>Aarabic Name</value>
   </data>
   <data name="NameEn" xml:space="preserve">
-    <value>الاسم بالانجليزي</value>
+    <value>English Name</value>
   </data>
   <data name="NotEmpty" xml:space="preserve">
-    <value>يجب ان يحتوي {0} علي قيمة </value>
+    <value>scan't be Empty</value>
   </data>
   <data name="NotFound" xml:space="preserve">
-    <value>هذا {0} ليس موجود</value>
+    <value>This is  is not found</value>
   </data>
   <data name="Phone" xml:space="preserve">
-    <value>رقم التليفون</value>
+    <value>Phone Number</value>
   </data>
   <data name="Required" xml:space="preserve">
-    <value>هذا الحقل مطلوب</value>
+    <value>This field is required.</value>
   </data>
   <data name="Student" xml:space="preserve">
-    <value>طالب</value>
+    <value>Student</value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>تم الطلب بنجاح</value>
+    <value>Successesed</value>
   </data>
   <data name="UnUnauthorized" xml:space="preserve">
-    <value>غير مصرج</value>
+    <value>UnUnauthorized</value>
   </data>
 </root>

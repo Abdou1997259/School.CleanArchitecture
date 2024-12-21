@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Localization;
-using School.Core.SharedResources;
+using School.Core.Resources;
 using School.Data.Constants.AppMetaData;
 using System.Net;
 

@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Localization;
-using School.Core.SharedResources;
+using School.Core.Resources;
 
 namespace School.Handlers.Behaviors
 {
@@ -27,8 +27,17 @@ namespace School.Handlers.Behaviors
 
                 if (failures.Count > 0)
                 {
-                    var messages = failures.Select(x => _stringLocalizer[x.PropertyName] + "  " + _stringLocalizer[x.ErrorMessage]).FirstOrDefault();
-                    throw new ValidationException(failures);
+                    var messages = failures.Select(x =>
+
+                    {
+                        var name = _stringLocalizer[x.PropertyName];
+
+                        return _stringLocalizer[x.PropertyName] + " :" + _stringLocalizer[x.ErrorMessage];
+                    }
+                    ).FirstOrDefault();
+
+
+                    throw new ValidationException(messages);
                 }
             }
 

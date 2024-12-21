@@ -118,45 +118,48 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BadRequest" xml:space="preserve">
-    <value>Bad Request</value>
+    <value>غير صالح</value>
   </data>
   <data name="Created" xml:space="preserve">
-    <value>Created  Successfully</value>
+    <value>تم الاضافة بنجاح</value>
   </data>
   <data name="Deleted" xml:space="preserve">
-    <value>Deleted Successfully</value>
+    <value>تم السمح بنجاح</value>
   </data>
   <data name="EmptyData" xml:space="preserve">
-    <value>There is no data.</value>
+    <value>لا يوجد بيانات</value>
+  </data>
+  <data name="Exists" xml:space="preserve">
+    <value>موجود من قبل</value>
   </data>
   <data name="InValid" xml:space="preserve">
-    <value>{0} is InValid</value>
+    <value> ليس صحيحا</value>
   </data>
   <data name="NameAr" xml:space="preserve">
-    <value>Aarabic Name</value>
+    <value>الاسم بالعربي</value>
   </data>
   <data name="NameEn" xml:space="preserve">
-    <value>English Name</value>
+    <value>الاسم بالانجليزي</value>
   </data>
   <data name="NotEmpty" xml:space="preserve">
-    <value>{0} can't be Empty</value>
+    <value>يجب ان يحتوي علي قيمة </value>
   </data>
   <data name="NotFound" xml:space="preserve">
-    <value>This is {0} is not found</value>
+    <value>هذا  ليس موجود</value>
   </data>
   <data name="Phone" xml:space="preserve">
-    <value>Phone Number</value>
+    <value>رقم التليفون</value>
   </data>
   <data name="Required" xml:space="preserve">
-    <value>This field is required.</value>
+    <value>هذا الحقل مطلوب</value>
   </data>
   <data name="Student" xml:space="preserve">
-    <value>Student</value>
+    <value>طالب</value>
   </data>
   <data name="Success" xml:space="preserve">
-    <value>Successesed</value>
+    <value>تم الطلب بنجاح</value>
   </data>
   <data name="UnUnauthorized" xml:space="preserve">
-    <value>UnUnauthorized</value>
+    <value>غير مصرج</value>
   </data>
 </root>

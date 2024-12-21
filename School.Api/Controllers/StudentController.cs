@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using School.Api.Bases;
 using School.Core.CQRS.Students.Commands;
 using School.Core.CQRS.Students.Queries;
+using School.Core.Resources;
 using School.Data.Constants.AppMetaData;
 
 namespace School.Api.Controllers
@@ -10,6 +12,12 @@ namespace School.Api.Controllers
     [ApiController]
     public class StudentController : AppControllerBase
     {
+        private readonly IStringLocalizer<SharedResource> _stringLoccalizer;
+        public StudentController(IStringLocalizer<SharedResource> stringLocalizer)
+        {
+            _stringLoccalizer = stringLocalizer;
+
+        }
         [HttpPost(Router.StudentRouting.Create)]
         public async Task<IActionResult> CreateAsync([FromBody] AddStudentCommand Student)
         {
@@ -27,6 +35,13 @@ namespace School.Api.Controllers
         {
             var result = await Sender.Send(model);
             return NewResult(result);
+        }
+        [HttpGet("localized")]
+        public IActionResult getlocalized()
+        {
+
+
+            return Ok(_stringLoccalizer[Localization.NotFound]);
         }
     }
 }
