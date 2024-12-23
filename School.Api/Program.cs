@@ -23,6 +23,7 @@ builder.Services.AddCoreDependencies();
 builder.Services.AddServiceDependencies();
 builder.Services.AddInfrastructureDependencies();
 builder.Services.AddHandlersDependencies();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddLocalization();
 
 builder.Services.Configure<RequestLocalizationOptions>(options =>

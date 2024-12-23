@@ -12,10 +12,14 @@ namespace School.Data.Entities
         public int SubID { get; set; }
 
         [ForeignKey("StudID")]
-        public virtual Student Student { get; set; }
+        [InverseProperty(nameof(Student.StudentSubjects))]
+        public virtual Student Student { get; set; } = default!;
 
         [ForeignKey("SubID")]
-        public virtual Subject Subject { get; set; }
+        [InverseProperty(nameof(Subject.StudentsSubjects ))]
+
+        public virtual Subject Subject { get; set; } = default!;
 
     }
 }
+    

@@ -10,7 +10,7 @@ namespace School.Data.Bases
         public string NameEn { get; set; } = null!;
         public string GetName()
         {
-            if (Thread.CurrentThread.Name == "en")
+            if (Thread.CurrentThread.Name == "en-US")
             {
                 return NameEn;
             }

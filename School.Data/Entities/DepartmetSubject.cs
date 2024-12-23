@@ -9,12 +9,15 @@ namespace School.Data.Entities
         [Key]
         public int DeptSubID { get; set; }
         public int DID { get; set; }
+
         public int SubID { get; set; }
 
         [ForeignKey("DID")]
-        public virtual Department Department { get; set; }
+        [InverseProperty(nameof(Department.DepartmentSubjects))]
+        public virtual Department Department { get; set; } = default!;
 
         [ForeignKey("SubID")]
-        public virtual Subject Subjects { get; set; }
+        [InverseProperty(nameof(Subject.DepartmentsSubjects))]
+        public virtual Subject Subject { get; set; } = default!;
     }
 }
