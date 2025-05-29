@@ -1,4 +1,5 @@
 ﻿using School.Core.Abstractions.Repositories;
+using School.Data.Bases;
 
 namespace School.Core.Bases
 {
@@ -6,6 +7,8 @@ namespace School.Core.Bases
     {
         IStudentRepository StudentRepository { get; }
         IDatabaseTransaction BeginTransaction();
+        public IGenericRepository<T> Repository<T>() where T : BaseEntity;
+
         Task<int> CompleteAsync();
     }
 }
